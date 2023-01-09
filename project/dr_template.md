@@ -20,6 +20,9 @@ Identify your zones here
 | ALB                  | Application Load Balancer                              | -           | 1   | Created in multiple region and deployed to DR |
 | RDS Cluster          | Managed MySQL DB clusters                              | -           | 2   | 1 in each region                              |
 | RDS Aurora Instances | Store application data                                 | db.t2.small | 4   | 2 in each region                              |
+| Key pairs            | used to connect to instances                           | -           | 2   | 1 in each region                              |
+| AMI Image            | vm images to be used by ec2 instances                  | -           | 2   | 1 in each region                              |
+| GitHub               | application source code and IaC                        | -           | 1   | -                                             |
 
 ### Descriptions
 More detailed descriptions of each asset identified above.
@@ -30,6 +33,9 @@ More detailed descriptions of each asset identified above.
 - **Load Balancer**: Load balancers will be used to distribute the load on application servers.
 - **RDS Cluster**:  will be used to store our application data.
 - **RDS Aurora Instances**: reader and writer instance which can be flipped over in event of fail-over.
+- **Key Pairs**: used to connect to EC2 instances via SSH or Putty.
+- **AMI**: virtual machine images stored in AWS. These are complete OS images and may even include applications. These images may be made by Amazon or a third party and always have a unique identifier associated with them.
+- **GitHub**: used for hosting and version control of our application source code and IaC (terraform).
 
 ## DR Plan
 ### Pre-Steps:
